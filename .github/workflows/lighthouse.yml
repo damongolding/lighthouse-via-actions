@@ -18,10 +18,3 @@ jobs:
         with:
           name: lighthouse-results
           path: ".lighthouseci" # This will save the Lighthouse results as .json files
-
-      - uses: actions/download-artifact@v1
-        with:
-          name: lighthouse-results
-          path: ./lighthouse-results
-          
-      - run: cat ./lighthouse-results
