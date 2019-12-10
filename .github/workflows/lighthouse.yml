@@ -22,6 +22,6 @@ jobs:
       - uses: actions/download-artifact@v1
         with:
           name: lighthouse-results
-          path: /lighthouse-results
+          path: ./lighthouse-results
           
-      - run: cat /lighthouse-results
+      - run: cat ./lighthouse-results
