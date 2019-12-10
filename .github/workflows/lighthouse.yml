@@ -5,14 +5,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v2
         with:
           urls: |
             https://film.britishcouncil.org
             https://film.britishcouncil.org/about
+
       - name: Save results
         uses: actions/upload-artifact@v1
         with:
           name: lighthouse-results
           path: ".lighthouseci" # This will save the Lighthouse results as .json files
+
+      - uses: actions/download-artifact@v1
+        with:
+          name: lighthouse-results
+          path: /lighthouse-results
+          
+      - run: cat /lighthouse-results
