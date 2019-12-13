@@ -10,8 +10,7 @@ jobs:
         uses: treosh/lighthouse-ci-action@v2
         with:
           urls: |
-            https://film.britishcouncil.org
-            https://film.britishcouncil.org/about
+            https://britishcouncil.github.io/bronte/examples/kitchen-sink
 
       - name: Save results
         uses: actions/upload-artifact@v1
